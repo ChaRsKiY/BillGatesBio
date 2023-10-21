@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    align-items: center;
+    color: white;
+}
+
+.container img {
+    border-radius: 50%;
+    width: 30%;
+    aspect-ratio: 1/1;
+}
+
+.container div {
+    font-size: 2.4rem;
+    font-family: 'Tilt Neon', sans-serif;
+}
