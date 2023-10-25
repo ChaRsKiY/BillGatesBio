@@ -4,5 +4,5 @@
         <li><a href="https://www.gatesfoundation.org">https://www.gatesfoundation.org</a></li>
         <li><a href="https://www.gatesnotes.com">https://www.gatesnotes.com</a></li>
         <li><a href="https://twitter.com/billgates">https://twitter.com/billgates</a></li>
-        <li *ngFor="let link of links">{{ link }}</li>
+        <li *ngFor="let link of links"><a href="{{ link }}">{{ link }}</a></li>
     </ul>
