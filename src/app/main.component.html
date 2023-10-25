@@ -1,24 +1,28 @@
 <div class="container">
-    <div class="title">Biography</div>
-    <div class="bio">
-        Born in October of 1955, Bill Gates is an American businessman known for the creation of Microsoft and his charity work across the globe. Developing a strong interest in computing during his adolescence, he later dropped out of Harvard to found Microsoft with his friend and classmate Paul Allen.
-    </div>
+        <div>
+        <input [(ngModel)]="newQuote" placeholder="Введите цитату">
+        <button (click)="addQuote()">Добавить цитату</button>
+      </div>
+      <div>
+        <input [(ngModel)]="newLink" placeholder="Введите ссылку на ресурс">
+        <button (click)="addLink()">Добавить ссылку на ресурс</button>
+        </div>
 
-    <div class="title">Сitation</div>
-    <ul>
-        <li>«Patience is a key element of success»</li>
-        <li>«If you think your teacher is tough, wait till you get a boss»</li>
-        <li>«Life is not fair — get used to it! »</li>
-        <li>«Success is a lousy teacher. It seduces smart people into thinking they
-            can’t lose»</li>
-        <li>«Be nice to nerds. Chances are you’ll end up working for one»</li>
-    </ul>
-    
-    <div class="title">Links</div>
-    <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Bill_Gates">https://en.wikipedia.org/wiki/Bill_Gates</a></li>
-        <li><a href="https://www.gatesfoundation.org">https://www.gatesfoundation.org</a></li>
-        <li><a href="https://www.gatesnotes.com">https://www.gatesnotes.com</a></li>
-        <li><a href="https://twitter.com/billgates">https://twitter.com/billgates</a></li>
-    </ul>
+        <div>
+            <button (click)="setInfo('bio')">Биография</button>
+            <button (click)="setInfo('links')">Ссылки</button>
+            <button (click)="setInfo('quotes')">Цитаты</button>
+          </div>
+          
+          <div [ngSwitch]="infoType">
+            <div *ngSwitchCase="'bio'">
+              <bill-gates-bio [bio]="bio"></bill-gates-bio>
+            </div>
+            <div *ngSwitchCase="'links'">
+              <bill-gates-links [links]="links"></bill-gates-links>
+            </div>
+            <div *ngSwitchCase="'quotes'">
+              <bill-gates-quotes [quotes]="quotes"></bill-gates-quotes>
+            </div>
+          </div>
 </div>

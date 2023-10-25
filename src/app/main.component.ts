@@ -10,4 +10,27 @@ import { Component } from '@angular/core';
     styleUrls: ['main.css']
 })
 export class MainComponent { 
+    quotes: string[] = [];
+    links: string[] = [];
+    newQuote: string = '';
+    newLink: string = '';
+    infoType: string = 'bio'; 
+  
+    addQuote() {
+      if (this.newQuote) {
+        this.quotes.push(this.newQuote);
+        this.newQuote = '';
+      }
+    }
+  
+    addLink() {
+      if (this.newLink) {
+        this.links.push(this.newLink);
+        this.newLink = '';
+      }
+    }
+  
+    setInfo(type: string) {
+      this.infoType = type;
+    }
 }
